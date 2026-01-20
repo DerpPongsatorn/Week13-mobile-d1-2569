@@ -28,7 +28,42 @@ class HomeScreen extends StatelessWidget {
               onTap: () {
                 debugPrint("TEST ok");
               },
-            )
+            ),
+            ListTile(
+              leading: Icon(Icons.apps),
+              title: Text("Row Widget"),
+              onTap: () {
+                debugPrint("TEST row");
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.apps),
+              title: Text("Columm Widget"),
+              onTap: () {
+                debugPrint("TEST columm");
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.apps),
+              title: Text("ListView Menu"),
+              onTap: () {
+                debugPrint("TEST LsitView");
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.credit_card_rounded),
+              title: Text("Card and Inkwall"),
+              onTap: () {
+                debugPrint("TEST Card");
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.credit_card_rounded),
+              title: Text("Card and Inkwall*"),
+              onTap: () {
+                debugPrint("TEST Card2");
+              },
+            ),
           ],
         ),
       ),
