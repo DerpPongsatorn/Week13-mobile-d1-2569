@@ -19,7 +19,16 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Flutter App",
-      home:MyCard()
+      //home:HomeScreen()
+      initialRoute: '/',
+      routes:{
+        '/':(context) => HomeScreen(),
+        '/row':(context) => RowPage(),
+        '/column':(context) => Column(),
+        '/menu':(context) => ListviewMenu(),
+        '/card':(context) => CardPage(),
+        '/my-card':(context) => MyCard(),
+      },
     );
   }
 }
