@@ -20,27 +20,28 @@ class HomeScreen extends StatelessWidget {
         child: ListView(
           children: [
             UserAccountsDrawerHeader(
-              accountName: Text("Mr.Mark Suckerberg"),
+              accountName: Text("Mr.Mark Zuckerberg"),
               accountEmail: Text("Mark@gmail.com"),
               currentAccountPicture: CircleAvatar(
-                child: Icon(Icons.android),
+                //child: Icon(Icons.android),
+                backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlT3lrGX4jdkZEOPL6sgmOFSfhI1NOELMssQ&s'),
               ),
             ),
             ListTile(
               leading: Icon(Icons.home),
               title: Text("Home"),
-              onTap: () {
+              onTap: () async {
                 debugPrint("TEST ok");
-                Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(),)
+                await Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(),)
                 );
               },
             ),
             ListTile(
               leading: Icon(Icons.apps),
               title: Text("Row Widget"),
-              onTap: () {
+              onTap: () async {
                 debugPrint("TEST row");
-                Navigator.push(context, MaterialPageRoute(builder: (context) => RowPage(),)
+                await Navigator.push(context, MaterialPageRoute(builder: (context) => RowPage(text: "Row Widget",)),
                 );
               },
             ),
@@ -56,29 +57,31 @@ class HomeScreen extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.apps),
               title: Text("ListView Menu"),
-              onTap: () {
-                debugPrint("TEST LsitView");
+              onTap: () async {
+
                 //Navigator.push(context, MaterialPageRoute(builder: (context) => CardPage(),)
                 //);
-                Navigator.pushNamed(context, "/menu");
+                final result = await Navigator.pushNamed(context, "/menu");
+                debugPrint("TEST LsitView $result");
               },
             ),
             ListTile(
               leading: Icon(Icons.credit_card_rounded),
               title: Text("Card and Inkwall"),
-              onTap: () {
+              onTap: () async {
                 debugPrint("TEST Card");
                 //Navigator.push(context, MaterialPageRoute(builder: (context) => MyCard(),)
                 //);
-                Navigator.pushNamed(context, "/card");
+                await Navigator.pushNamed(context, "/card");
               },
             ),
             ListTile(
               leading: Icon(Icons.credit_card_rounded),
-              title: Text("Card and Inkwall*"),
-              onTap: () {
+              title: Text("My-Card"),
+              onTap: ()  async {
                 debugPrint("TEST Card2");
-                Navigator.pushNamed(context, "/my-card");
+                //Navigator.pushNamed(context, "/my-card");
+                await Navigator.pushNamed(context,  MyCard.id);
               },
             ),
           ],

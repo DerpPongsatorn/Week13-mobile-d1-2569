@@ -1,8 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class RowPage extends StatelessWidget {
-  const RowPage({super.key});
+  final String text;
+
+  const RowPage({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +11,7 @@ class RowPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.purple,
         centerTitle: true,
-        title: Text("Row Widget",style: TextStyle(color: Colors.white)),
+        title: Text(text, style: TextStyle(color: Colors.white)),
       ),
       body: Center(
         child: Row(
